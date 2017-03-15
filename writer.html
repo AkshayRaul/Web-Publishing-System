@@ -1,9 +1,12 @@
 <html>
-<script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type='text/javascript'>
 function loadDoc() {
+  var filename = prompt("Please enter a name of the file you wish to save", "Enter here..");
   var xhttp = new XMLHttpRequest();
   var parameters=document.getElementById("writtentext").value;
-  var filename=document.getElementById("text").value;
+
   console.log(parameters);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -12,20 +15,21 @@ function loadDoc() {
   };
   xhttp.open("POST", "save.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("text="+parameters+"&file="+filename);
+  xhttp.send("parameters="+parameters+"&filename="+filename);
 }
 </script>
 <body>
-<h1>Welcome Writer</h1>
-<textarea rows="50" cols="100" placeholder="Start writing your report from here.." name="writtentext" id="writtentext"></textarea>
-<input type="text" name="" id="text">
-<input type="button" name="save" value="save" onclick="loadDoc()" />
+<h1 >Welcome Writer</h1>
+<textarea rows="25" cols="100" placeholder="Start writing your report from here.." name="writtentext" id="writtentext"></textarea>
+<br>
+<input type="button" class='btn btn-primary' name="save" value="save" onclick="loadDoc()" />
 <div id="demo"></div>
-<h2>Kindly upload a file after drafting</h2>
-<form action="uploads.php" enctype="multipart/form-data" method="post"> 
-Please choose a file: 
-<input name="uploaded" type="file" /><br /> 
-<input type="submit" name="submit" value="Upload" />
+<p>OR</p>
+<h2>Add your file externally </h2>
+<form action="uploads.php" enctype="multipart/form-data" method="post">
+Please choose a file:
+<input name="uploaded" class='btn btn-primary' type="file" /><br />
+<input type="submit" class='btn btn-primary' name="submit" value="Upload" />
 </form>
 </body>
 </html>

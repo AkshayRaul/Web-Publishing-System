@@ -1,17 +1,3 @@
-<html>
-<style>
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
-</style>
-<body>
-<p>
 "Ignorance is bliss". Agree or disagree?
 
 "As hunger is cured by food, so ignorance is cured by study." said a Chinese author.
@@ -23,9 +9,3 @@ For example: Jonas Salk, the scientist who conquered Polio was worried because i
 Another example would be the story of Nelson Mandela, the first Black President of South Africa. Nelson was frustrated by how he and other blacks were being treated. They were paid low wages for working in dangerous gold mines and other hard jobs. In 1942 Nelson studied hard and become a lawyer. Nelson fought hard for equal rights. He was put in jail for 27 years and finally black South African gained more rights. In 1994, Nelson was elected president of South Africa. Nelson Mandela had shaken the tree of South Africa and changes the world. Studying about Mandela story, I am assured we should gain knowledge instead of being ignorance in order to help people.
 
 Ignorance is simply insensitivity or lack of education and can be cured only by study. Both Jonas Stalk and Nelson Mandela have compassion and studied hard to make other people live better. The dream of Jonas Stalk came true when polio was conquered and Mandela's dream came true when blacks have equal rights. I am assured that when their dreams finally came true they had the true happiness or bliss.
-</p>
-<div class="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div>
-</body>
-</html>
