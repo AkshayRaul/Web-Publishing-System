@@ -3,6 +3,7 @@
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   var parameters=document.getElementById("writtentext").value;
+  var filename=document.getElementById("text").value;
   console.log(parameters);
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -10,12 +11,14 @@ function loadDoc() {
     }
   };
   xhttp.open("POST", "save.php", true);
-  xhttp.send("parameter",parameters);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("text="+parameters+"&file="+filename);
 }
 </script>
 <body>
 <h1>Welcome Writer</h1>
 <textarea rows="50" cols="100" placeholder="Start writing your report from here.." name="writtentext" id="writtentext"></textarea>
+<input type="text" name="" id="text">
 <input type="button" name="save" value="save" onclick="loadDoc()" />
 <div id="demo"></div>
 <h2>Kindly upload a file after drafting</h2>
