@@ -1,0 +1,28 @@
+<html>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  var parameters=document.getElementById("writtentext").value;
+  console.log(parameters);
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "save.php", true);
+  xhttp.send("parameter",parameters);
+}
+</script>
+<body>
+<h1>Welcome Writer</h1>
+<textarea rows="50" cols="100" placeholder="Start writing your report from here.." name="writtentext" id="writtentext"></textarea>
+<input type="button" name="save" value="save" onclick="loadDoc()" />
+<div id="demo"></div>
+<h2>Kindly upload a file after drafting</h2>
+<form action="uploads.php" enctype="multipart/form-data" method="post"> 
+Please choose a file: 
+<input name="uploaded" type="file" /><br /> 
+<input type="submit" name="submit" value="Upload" />
+</form>
+</body>
+</html>
